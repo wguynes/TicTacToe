@@ -6,7 +6,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenOneWinsFirstRowReturnsOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             1, 1, 1,
             0, 0, 0,
@@ -18,7 +18,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenOneWinsSecondRowReturnsOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             0, 0, 0,
             1, 1, 1,
@@ -30,7 +30,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenOneWinsFirstColumnReturnsOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             1, 0, 0,
             1, 0, 0,
@@ -42,7 +42,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenOneWinsDescendingDiagonalReturnsOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             1, 0, 0,
             0, 1, 0,
@@ -54,7 +54,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenOneWinsAscendingDiagonalReturnsOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             0, 0, 1,
             0, 1, 0,
@@ -66,7 +66,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenTwoWinsFirstRowReturnsTwo()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             2, 2, 2,
             0, 0, 0,
@@ -78,7 +78,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenIncompleteGameReturnsNegativeOne()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             1, 2, 1,
             1, 2, 2,
@@ -90,7 +90,7 @@ public class TicTacToeTests
     [Fact]
     public void GivenCatsGameReturnsZero()
     {
-        var result = Checker.Winner(new List<int>
+        var result = TicTacToe.Winner(new List<int>
         {
             1, 2, 1,
             1, 2, 2,

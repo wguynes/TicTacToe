@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public static class Checker
+public static class TicTacToe
 {
     private const int BoardDimension = 3;
     private const int IncompleteGame = -1;
