@@ -6,10 +6,10 @@ import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 
 
-class MainTests : DescribeSpec({
-    describe("library") {
+class GameTests : DescribeSpec({
+    describe("game") {
         it("someLibraryMethod returns true") {
-            val classUnderTest = Library()
+            val classUnderTest = Game()
             classUnderTest.someLibraryMethod() shouldBe true
         }
     }

@@ -1,4 +1,4 @@
-class Library {
+class Game {
     fun someLibraryMethod(): Boolean {
         return true
     }
