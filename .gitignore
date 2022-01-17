@@ -3,3 +3,11 @@ venv/
 bin/
 obj/
 *.DotSettings.user
+
+kotlin/build/
+kotlin/.gradle/
+kotlin/.idea/
+!kotlin/gradle/wrapper/gradle-wrapper.jar
+!kotlin/**/src/main/**/build/
+!kotlin/**/src/test/**/build/
+kotlin/build-output/
