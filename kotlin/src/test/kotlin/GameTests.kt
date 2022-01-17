@@ -8,9 +8,15 @@ import io.kotest.matchers.shouldBe
 
 class GameTests : DescribeSpec({
     describe("game") {
-        it("someLibraryMethod returns true") {
-            val classUnderTest = Game()
-            classUnderTest.someLibraryMethod() shouldBe true
+
+        var game = Game()
+
+        beforeEach {
+            game = Game()
+        }
+
+        it("score returns zero") {
+            game.score() shouldBe 0
         }
     }
 })

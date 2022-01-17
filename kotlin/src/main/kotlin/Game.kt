@@ -1,5 +1,5 @@
 class Game {
-    fun someLibraryMethod(): Boolean {
-        return true
+    fun score(): Int {
+        return 0
     }
 }
