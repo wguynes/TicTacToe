@@ -25,7 +25,7 @@ class Game {
     private fun ascDiagonal(xs: Array<IntArray>): IntArray {
         val rows = xs.size
         return IntArray(rows) { i ->
-            xs[xs.size-1-i][i]
+            xs[xs.size - 1 - i][i]
         }
     }
 
@@ -34,9 +34,9 @@ class Game {
         val paths = board.copy() + transpose(board) + descDiagonal(board) + ascDiagonal(board)
 
         paths.forEach {
-            val set = it.toHashSet();
+            val set = it.toHashSet()
             if (!set.contains(0) && set.count() == 1) {
-                return set.first();
+                return set.first()
             }
         }
 
