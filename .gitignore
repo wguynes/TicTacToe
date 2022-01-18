@@ -3,6 +3,7 @@ venv/
 bin/
 obj/
 *.DotSettings.user
+.DS_Store
 
 kotlin/build/
 kotlin/.gradle/

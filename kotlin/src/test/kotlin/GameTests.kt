@@ -11,12 +11,84 @@ class GameTests : DescribeSpec({
 
         var game = Game()
 
-        beforeEach {
-            game = Game()
+        it("winner returns one if one wins first row") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(1, 1, 1),
+                intArrayOf(0, 0, 0),
+                intArrayOf(0, 0, 0),
+            )
+
+            game.winner(board) shouldBe 1
         }
 
-        it("score returns zero") {
-            game.score() shouldBe 0
+        it("winner returns one if one wins second row") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(0, 0, 0),
+                intArrayOf(1, 1, 1),
+                intArrayOf(0, 0, 0),
+            )
+
+            game.winner(board) shouldBe 1
+        }
+
+        it("winner returns one if one wins third row") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(0, 0, 0),
+                intArrayOf(0, 0, 0),
+                intArrayOf(1, 1, 1),
+            )
+
+            game.winner(board) shouldBe 1
+        }
+
+        it("winner returns one if one wins first column") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(1, 0, 0),
+                intArrayOf(1, 0, 0),
+                intArrayOf(1, 0, 0),
+            )
+
+            game.winner(board) shouldBe 1
+        }
+
+        it("winner returns one if one wins descending diagonal") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(1, 0, 0),
+                intArrayOf(0, 1, 0),
+                intArrayOf(0, 0, 1),
+            )
+
+            game.winner(board) shouldBe 1
+        }
+
+        it("winner returns one if one wins ascending diagonal") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(0, 0, 1),
+                intArrayOf(0, 1, 0),
+                intArrayOf(1, 0, 0),
+            )
+
+            game.winner(board) shouldBe 1
+        }
+
+        it("winner returns zero if cats game") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(2, 1, 1),
+                intArrayOf(1, 2, 2),
+                intArrayOf(1, 2, 1),
+            )
+
+            game.winner(board) shouldBe 0
+        }
+
+        it("winner returns negative one if unfinished game") {
+            val board: Array<IntArray> = arrayOf(
+                intArrayOf(2, 1, 1),
+                intArrayOf(1, 2, 2),
+                intArrayOf(1, 2, 0),
+            )
+
+            game.winner(board) shouldBe -1
         }
     }
 })
