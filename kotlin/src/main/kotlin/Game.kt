@@ -5,27 +5,25 @@ class Game {
 
     private fun Array<IntArray>.copy() = map { it.clone() }.toTypedArray()
 
-    private fun transpose(xs: Array<IntArray>): Array<IntArray> {
-        val cols = xs[0].size
-        val rows = xs.size
+    private fun transpose(originalArray: Array<IntArray>): Array<IntArray> {
+        val cols = originalArray[0].size
+        val rows = originalArray.size
         return Array(cols) { j ->
             IntArray(rows) { i ->
-                xs[i][j]
+                originalArray[i][j]
             }
         }
     }
 
-    private fun descDiagonal(xs: Array<IntArray>): IntArray {
-        val rows = xs.size
-        return IntArray(rows) { i ->
-            xs[i][i]
+    private fun descDiagonal(originalArray: Array<IntArray>): IntArray {
+        return IntArray(originalArray.size) { i ->
+            originalArray[i][i]
         }
     }
 
-    private fun ascDiagonal(xs: Array<IntArray>): IntArray {
-        val rows = xs.size
-        return IntArray(rows) { i ->
-            xs[xs.size - 1 - i][i]
+    private fun ascDiagonal(originalArray: Array<IntArray>): IntArray {
+        return IntArray(originalArray.size) { i ->
+            originalArray[originalArray.size - 1 - i][i]
         }
     }
 
